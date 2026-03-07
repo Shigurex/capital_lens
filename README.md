@@ -43,6 +43,20 @@ pnpm exec wrangler d1 execute DB --local --command="INSERT INTO symbols (code, p
 pnpm exec wrangler d1 execute DB --local --command="SELECT * FROM symbols;"
 ```
 
+Load test data from the seed file:
+
+```bash
+pnpm exec wrangler d1 execute DB --local --file=./db/seeds/testdata.sql
+```
+
+Check the inserted data:
+
+```bash
+pnpm exec wrangler d1 execute DB --local --command="SELECT * FROM users;"
+pnpm exec wrangler d1 execute DB --local --command="SELECT * FROM symbols;"
+pnpm exec wrangler d1 execute DB --local --command="SELECT * FROM symbol_bookmarks;"
+```
+
 Notes:
 
 - `--local` uses a separate local database under `.wrangler/` and does not affect the remote D1 database.
