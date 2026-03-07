@@ -44,3 +44,12 @@ tasks:
     cmds:
       - "{{.PNPM}} exec biome check --write ."
 
+  db:studio:local:
+    desc: Open Drizzle Studio for local D1
+    cmds:
+      - "{{.PNPM}} db:studio:local"
+
+  db:studio:prod:
+    desc: Open Drizzle Studio for production D1
+    cmds:
+      - "{{.PNPM}} db:studio:prod"
