@@ -16,6 +16,21 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Task Runner
+
+This repository includes a `Taskfile.yml` for common development operations.
+
+```bash
+task setup          # install dependencies
+task dev            # start Next.js dev server
+task build          # build app
+task start          # start production server (build runs first)
+task cloudflare:dev -- src/index.ts # start wrangler local server
+task check          # run ESLint + Biome check
+task biome:fix      # run Biome fixes
+task biome:format   # format with Biome
+```
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

@@ -1,0 +1,46 @@
+version: "3"
+
+vars:
+  PNPM: pnpm
+
+tasks:
+  default:
+    desc: Show available tasks
+    cmds:
+      - task --list
+
+  setup:
+    desc: Install dependencies
+    cmds:
+      - "{{.PNPM}} install"
+
+  dev:
+    desc: Start Next.js development server
+    cmds:
+      - "{{.PNPM}} dev"
+
+  build:
+    desc: Build the Next.js application
+    cmds:
+      - "{{.PNPM}} build"
+
+  fix:
+    desc: Run Biome fixes
+    deps: [biome:fix]
+
+  start:
+    desc: Start the production server
+    deps: [build]
+    cmds:
+      - "{{.PNPM}} start"
+
+  biome:check:
+    desc: Run Biome checks
+    cmds:
+      - "{{.PNPM}} exec biome check ."
+
+  biome:fix:
+    desc: Run Biome and apply safe fixes
+    cmds:
+      - "{{.PNPM}} exec biome check --write ."
+
