@@ -1,0 +1,7 @@
+name = "capital-lens"
+compatibility_date = "2026-03-07"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "capital-lens"
+database_id = "5e1c6df6-e75e-4a37-8259-771319243e12"
