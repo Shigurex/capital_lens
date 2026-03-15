@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "capital-lens-ingest"
+version = "0.1.0"
+description = "CLI ingestion jobs for JPX, yfinance, and EDINET into Cloudflare D1"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+  "requests>=2.32.5",
+  "pandas>=2.3.3",
+  "yfinance>=0.2.66",
+  "xlrd>=2.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.4.2",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["srcs/capital_lens_ingest"]
+
+[tool.pytest.ini_options]
+pythonpath = ["srcs"]
+testpaths = ["tests"]

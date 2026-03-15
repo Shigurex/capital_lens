@@ -43,3 +43,15 @@ next-env.d.ts
 
 # cloudflare
 .wrangler
+
+# vscode
+.vscode
+
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# server runtime artifacts
+server/data/
